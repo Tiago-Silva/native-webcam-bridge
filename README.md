@@ -17,11 +17,10 @@ Uma ferramenta gráfica de altíssima performance e baixa latência escrita em R
 
 ---
 
-## 🚀 Como Baixar e Usar (Download & Run)
+## 🚀 Como Baixar
 
 Você **não precisa compilar nada** para usar! O robô do GitHub Actions compila os executáveis prontos para uso a cada atualização.
 
-### 1. Obter o Aplicativo
 Vá na aba **[Releases](https://github.com/Tiago-Silva/native-webcam-bridge/releases)** à direita da página e baixe a última versão:
 
 * 🪟 **Windows**: Baixe o arquivo `Native_Cam_bridge_win64.zip`.
@@ -35,6 +34,51 @@ Vá na aba **[Releases](https://github.com/Tiago-Silva/native-webcam-bridge/rele
      chmod +x Native_Cam_bridge.AppImage
      ```
   2. Dê dois cliques no arquivo `AppImage` para abrir.
+
+---
+
+## 🛠️ Instruções de Uso (Passo a Passo)
+
+Para utilizar a ferramenta com sucesso, siga este passo a passo:
+
+### Passo 1: Habilitar o Modo Desenvolvedor e a Depuração no Celular
+Antes de tudo, configure seu celular seguindo as etapas da seção [Configuração do Celular (Android)](#-configuração-do-celular-android) abaixo. Você precisará ativar:
+* **Depuração USB** (para conexão via cabo USB).
+* **Depuração sem fio** (caso prefira conectar sem fios via Wi-Fi).
+
+---
+
+### Passo 2: Conectar o Celular ao Computador
+Escolha uma das duas formas de conexão abaixo:
+
+#### Opção A: Conexão via Cabo USB (Recomendado para menor latência)
+1. Conecte o celular ao computador usando um cabo USB de boa qualidade.
+2. **Autorize a Depuração no Celular (Crucial!)**: 
+   * Ao conectar o cabo, fique atento à tela do celular. Um aviso pop-up perguntando **"Permitir depuração USB?"** será exibido.
+   * Marque a opção **"Sempre permitir a partir deste computador"** e toque em **Permitir**. 
+   * *Se você não autorizar, o computador não conseguirá se comunicar com o celular.*
+
+#### Opção B: Conexão via Wi-Fi (Sem Fios)
+1. Certifique-se de que o computador e o celular estejam conectados na **mesma rede Wi-Fi**.
+2. No celular, vá em **Configurações > Opções do desenvolvedor > Depuração sem fio** e ative a chave.
+3. Toque no texto **"Depuração sem fio"** para entrar na tela de detalhes. Lá você verá o **Endereço IP e porta** (ex: `192.168.1.50:39845`).
+4. **Autorize a Depuração**: Se for a primeira vez, pode aparecer um aviso na tela do celular perguntando se deseja permitir a depuração sem fio nesta rede. Toque em **Permitir**.
+5. Abra o aplicativo **Native Webcam Bridge** no computador e insira esse **Endereço IP** e a **Porta** no campo de conexão Wi-Fi correspondente.
+
+---
+
+### Passo 3: Escolher o Modo no Aplicativo e Iniciar
+Com o celular conectado e devidamente autorizado, execute o **Native Webcam Bridge** no computador e escolha um dos modos de operação:
+
+* **Modo Webcam Virtual**: 
+  - Se estiver no Linux, clique em **Create Device** e digite sua senha de administrador para iniciar o módulo virtual do kernel (`v4l2loopback`). No Windows, este passo não é necessário.
+  - Selecione a resolução e o codec desejados.
+  - Clique em **Start Webcam** para iniciar a transmissão.
+  - No OBS Studio, Zoom ou Google Meet, adicione um dispositivo de captura de vídeo e selecione a câmera virtual criada.
+* **Modo Espelhamento NDI**:
+  - Selecione a resolução e o codec desejados.
+  - Clique em **Start NDI** para começar a espelhar e publicar o vídeo na rede local.
+  - No OBS Studio (com o plugin OBS-NDI instalado) ou outro software compatível, adicione uma fonte NDI e selecione o feed vindo do aplicativo.
 
 ---
 
