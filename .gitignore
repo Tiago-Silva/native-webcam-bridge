@@ -1,0 +1,12 @@
+# JetBrains IDE settings
+.idea/
+
+# VS Code settings
+.vscode/
+
+# Rust build target (just in case code is added in the future)
+target/
+
+# OS temporary/hidden files
+.DS_Store
+Thumbs.db
